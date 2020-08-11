@@ -6,7 +6,17 @@ public class Spiral {
 
 	public static void main(String[] args) {
 		// 1. Create a new Robot
-		
+		Robot rob = new Robot();
+		rob.penDown();
+		rob.setSpeed(100);
+		for(int i=1; i<75; i++) {
+			rob.setRandomPenColor();
+			rob.move(i*5);
+			rob.turn(360/7);
+			rob.setPenWidth(i);
+			
+			
+		}
 		// 5. Set your robot's pen down 
 		
 		// 3. Set the robot to go at max speed (100)

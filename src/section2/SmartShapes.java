@@ -1,11 +1,25 @@
 package section2;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class SmartShapes {
 	
     public static void main(String[] args) throws Exception {
         // 1. Make a new Robot
+    	Robot rob = new Robot();
+    	rob.setX(200);
+    	rob.setY(500);
+    	rob.penDown();
+    	rob.setSpeed(100);
+    	String sides=JOptionPane.showInputDialog("How Many Sides do you Want?");
+    	int Sides=Integer.parseInt(sides);
+    	
+    	for(int i=0; i<Sides; i++) {
+    		rob.move(200);
+    		rob.turn(360/Sides);
+    	}
 
 
         // 3. Put the robot's pen down

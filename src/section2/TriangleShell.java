@@ -4,11 +4,20 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class TriangleShell {
 
-	// 1. Create a new Robot
+	Robot rob = new Robot();// 1. Create a new Robot
 
 	
 	void go() {
-		drawTriangle(100); // 3. delete this line (used only for testing)
+		 rob.setSpeed(100);
+		 rob.penDown();
+		 int tri = 50;
+		 for(int i = 1; i<60; i++){
+			 rob.setRandomPenColor();
+			 tri=tri+10;
+			 drawTriangle(tri);
+			 rob.turn(6);
+			 // 3. delete this line (used only for testing)
+		 }
 
 		// 6. Make the robot go as fast as possible
 
@@ -28,6 +37,10 @@ public class TriangleShell {
 
 	/* 2. fill in the method below to draw a triangle. Use the length variable when you call move(). */
 	private void drawTriangle(int length) {
+	for(int i=1; i<4; i++) {
+		rob.move(length);
+		rob.turn(120);
+	}
 		
 		
 		

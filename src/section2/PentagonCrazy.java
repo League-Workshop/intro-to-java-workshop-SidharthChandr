@@ -10,6 +10,18 @@ public class PentagonCrazy {
 
 	private void makePrettyThings() {
 		// 1. Create a new Robot
+		Robot rob = new Robot();
+		rob.penDown();
+		rob.setSpeed(100);
+		rob.setRandomPenColor();
+		int pent=8;
+		int ang = 360/pent;
+		for(int i=200; i>100; i--) {
+			rob.setRandomPenColor();
+			rob.move(i);
+			rob.turn(ang);
+			rob.turn(1);
+		}
 
 		// 3. Put the robot's pen down
 
