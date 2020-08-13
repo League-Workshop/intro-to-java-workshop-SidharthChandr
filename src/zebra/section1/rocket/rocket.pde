@@ -1,5 +1,7 @@
 int rocketX = 400;
 int rocketY = 600;
+int x = (int)random(50,800);
+int y = 50;
 
 void setup() {
   background(0, 0, 40);
@@ -9,9 +11,16 @@ void setup() {
 void draw() {
   background(0, 0, 0);
   fill(255, 255, 255);
+  x=x;
+  y=y+10;
   // 1. ▼ Write code BELOW this line to make stars ▼ 
   //    Example:
-  //     circle(50, 50, 50);
+  fill(#FFF703);
+  circle(x, y, 50);
+  if(y>800){
+    y=50;
+    x = (int)random(50,700);
+  }
 
 
 

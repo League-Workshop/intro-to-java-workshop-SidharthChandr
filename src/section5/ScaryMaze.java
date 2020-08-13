@@ -19,10 +19,13 @@ import javax.swing.SwingUtilities;
 public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 	
 	BufferedImage maze;
-	final int frameWidth = 500;
-	final int frameHeight = 500;
+	final int frameWidth = 700;
+	final int frameHeight = 900;
 
 	ScaryMaze() throws Exception {
+		maze=ImageIO.read(getClass().getResource("standardMaze.jpg"));
+		new Robot().mouseMove(45, 95);
+		addMouseMotionListener(this);
 		//1. Use this online tool to make a maze image and drop it into your section5 package: https://www.pixilart.com/
 		//maze = ImageIO.read(getClass().getResource("standardMaze.jpg"));
 		//2. Change the line of code above so that it matches your maze's file name
@@ -41,6 +44,15 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		int mouseY = e.getY();
 		int mouseColor = maze.getRGB(mouseX, mouseY);
 		//5. Print the mouseColor variable 
+		System.out.println(mouseColor);
+		int bgcolor=-16777216;
+		if(mouseColor==-16777216) {
+			scare();
+		}
+		if (mouseColor==-11927788) {
+			JOptionPane.showMessageDialog(null, "You won!!");
+		}
+		
 		
 		//6.  Run your program and put your mouse over the background to find out what color it is
 		
@@ -57,12 +69,13 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 	}
 
 	private void scare() {
-		System.out.println("BOO!");
+		showScaryImage("standardScaryPicture.jpg");
+		
 		//9. Find a scary sound and put it in the section5 package where you put your maze picture. You can find a sound on freesound.org. Log in as leagueofamazing/code4life.
 		
 		//10. Use the code below to load your sound.  Change the file name to match the name of your sound file.  
-		//AudioClip sound = JApplet.newAudioClip(getClass().getResource("standardScarySound.wav"));
-		
+		AudioClip sound = JApplet.newAudioClip(getClass().getResource("standardScarySound.wav"));
+		sound.play();
 		//11. Play the scary sound. Hint: type "sound" and then a period.		
 		
 		//12. Drop an image into your section5 package, and use the showScaryImage method to scare your victim!

@@ -1,10 +1,39 @@
 package zebra.section1;
 
+import org.jointheleague.graphical.robot.Robot;
+
 public class RobotFreestyle {
 	
 	public static void main(String[] args) {
 		
 		// ▼ Write your code BELOW this line ▼
+		Robot rob = new Robot();
+for(int i=1; i<80; i++) {
+		rob.setRandomPenColor();
+		rob.hide();
+		rob.setSpeed(100);
+		rob.penDown();
+		rob.move(100);
+		rob.turn(120);
+		rob.move(100);
+		rob.turn(120);
+		rob.move(100);
+		rob.move(100);
+		rob.turn(120);
+		rob.move(100);
+		rob.turn(120);
+		rob.move(100);
+		rob.move(100);
+		rob.turn(120);
+		rob.move(100);
+		rob.turn(120);
+		rob.move(100);
+		rob.move(100);
+		rob.turn(150);
+		rob.move(100);
+		rob.turn(150);
+		rob.move(100);
+	}
 		
 		
 		// 1. Make a new Robot().  Remember to give it a name!
