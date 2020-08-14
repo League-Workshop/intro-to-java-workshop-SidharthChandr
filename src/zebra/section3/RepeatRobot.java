@@ -6,7 +6,14 @@ public class RepeatRobot {
 	public static void main(String[] args) {
 		
 		// ▼ Write your code BELOW this line ▼
-		
+		Robot rob = new Robot();
+		for(int i =1; i<100; i++) {
+			rob.setSpeed(100);
+			rob.penDown();
+			rob.turn(360/i);
+			rob.setRandomPenColor();
+			rob.move(20);
+		}
 		
 		// 1. Make a new Robot().  Remember to give it a name!  Example: Robot isis = new Robot();
 		
